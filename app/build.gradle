@@ -1,0 +1,66 @@
+// App-level build.gradle
+
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'com.google.devtools.ksp'
+
+android {
+    compileSdkVersion 35
+
+    defaultConfig {
+        namespace "com.meldcx.appschedule"
+        minSdkVersion 26
+        targetSdkVersion 34
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildFeatures {
+        compose true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion '1.5.0' // Use latest Compose compiler version
+    }
+
+    kotlinOptions {
+        jvmTarget = "17"
+    }
+    kotlin {
+        jvmToolchain(17)
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+}
+
+dependencies {
+    implementation libs.kotlin.stdlib
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version"
+    implementation libs.kotlinx.coroutines.android
+
+    implementation libs.androidx.core.ktx.v1120
+    implementation libs.androidx.appcompat.v161
+    implementation libs.androidx.recyclerview.v131
+
+    implementation libs.androidx.lifecycle.runtime.ktx
+    implementation libs.androidx.lifecycle.viewmodel.ktx
+    implementation libs.androidx.activity.ktx
+    implementation libs.androidx.fragment.ktx  // For Fragment viewModels() delegate
+
+    implementation libs.androidx.material3
+
+    implementation libs.androidx.cardview
+
+    // Replace kapt with ksp for Room compiler
+    //ksp libs.androidx.room.compiler
+    implementation "androidx.room:room-runtime:2.5.2"
+    implementation "androidx.room:room-ktx:2.5.2"
+    ksp "androidx.room:room-compiler:2.5.2"
+
+}
