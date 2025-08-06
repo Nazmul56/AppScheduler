@@ -3,7 +3,7 @@
 buildscript {
     ext {
         kotlin_version = '1.9.0'       // Latest Kotlin version (2025 approx)
-        agp_version = '8.9.2'           // Android Gradle Plugin latest stable
+        agp_version = '8.9.0-alpha07'           // Android Gradle Plugin latest stable
         room_version = '2.5.2'          // Latest Room stable
         lifecycle_version = '2.6.2'     // Lifecycle latest
         coroutines_version = '1.7.3'    // Coroutines latest
@@ -19,6 +19,7 @@ buildscript {
         classpath "com.android.tools.build:gradle:$agp_version"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath libs.com.google.devtools.ksp.gradle.plugin // Add this line
+        classpath libs.hilt.android.gradle.plugin.v248
 
     }
 }

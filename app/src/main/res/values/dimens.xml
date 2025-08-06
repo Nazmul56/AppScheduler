@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="text_size_normal">16sp</dimen>
+    <dimen name="text_size_large">18sp</dimen>
+    <dimen name="text_size_small">12sp</dimen>
+
+    <dimen name="text_size_14sp">14sp</dimen>
+    <dimen name="text_size_12sp">12sp</dimen>
+    <dimen name="app_bar_size">88dp</dimen>
+    <dimen name="icon_19dp">19dp</dimen>
+    <dimen name="selection_card_height">80dp</dimen>
+
+    <dimen name="text_size_primary">16sp</dimen>
+    <dimen name="text_size_primary_place_holder">14sp</dimen>
+    <dimen name="text_size_primary_all_title">20sp</dimen>
+
+    <!--    all margin -->
+    <dimen name="text_size_15sp">15sp</dimen>
+    <dimen name="text_size_26sp">26sp</dimen>
+    <dimen name="text_size_27sp">27sp</dimen>
+    <dimen name="text_size_18sp">18sp</dimen>
+    <dimen name="text_size_20sp">20sp</dimen>
+    <dimen name="border_radius_primary">12dp</dimen>
+    <dimen name="button_height_primary">45dp</dimen>
+    <dimen name="commonLayoutWidth">224dp</dimen>
+    <dimen name="margin_parent_common">20dp</dimen>
+    <dimen name="text_size_16sp">16sp</dimen>
+
+
+    <dimen name="section_head_title_text_size">14sp</dimen>
+
+    <dimen name="round_button_large">92dp</dimen>
+    <dimen name="shutter_button_margin">80dp</dimen>
+    <dimen name="button_height_primary_auto_complete">55dp</dimen>
+
+    //common
+    <dimen name="margin_activity_item">16dp</dimen>
+    <dimen name="margin_activity_item_2">24dp</dimen>
+    <dimen name="margin_activity_item_small">24dp</dimen>
+    <dimen name="margin_activity_16">16dp</dimen>
+    <dimen name="margin_between_card_horizontal">16dp</dimen>
+
+    <dimen name="padding_dialog_fragment">16dp</dimen>
+
+    <dimen name="radius_corner_drawable">12dp</dimen>
+
+    <dimen name="stroke_width_2">2dp</dimen>
+
+    <dimen name="padding_button_top_bottom">12dp</dimen>
+    <dimen name="spacing">16dp</dimen>
+    <dimen name="padding_drawable">4dp</dimen>
+    <dimen name="text_size_13sp">13sp</dimen>
+
+    <!--  Footer-->
+    <dimen name="size_record_btn">60dp</dimen>
+    <dimen name="margin_from_edge">8dp</dimen>
+
+    <!--    camera-->
+    <dimen name="margin_ref_view_vertical">256dp</dimen>
+    <dimen name="margin_ref_view_horizontal">56dp</dimen>
+
+    <!--    login-->
+    <dimen name="margin_login_form">36dp</dimen>
+
+    <!--    global margin-->
+    <dimen name="margin_responsive_normal">16dp</dimen>
+    <dimen name="margin_responsive_small">8dp</dimen>
+    <dimen name="margin_responsive_very_small">4dp</dimen>
+    <dimen name="margin_responsive_large">24dp</dimen>
+    <dimen name="dp_70">70dp</dimen>
+    <dimen name="table_view_cell_height">48dp</dimen>
+    <dimen name="table_view_row_header_width">40dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+
+    <!--Dashboard-->
+    <dimen name="dashboard_card_radius">4dp</dimen>
+
+    <!--Dialog-->
+
+    <dimen name="margin_details_16">16dp</dimen>
+    <dimen name="width_200dp">200dp</dimen>
+    <dimen name="width_20dp">20dp</dimen>
+
+    <dimen name="height_20dp">20dp</dimen>
+    <dimen name="height_10dp">10dp</dimen>
+    <dimen name="height_12dp">12dp</dimen>
+    <dimen name="height_30dp">30dp</dimen>
+    <dimen name="margin_12dp">12dp</dimen>
+    <dimen name="margin_4dp">4dp</dimen>
+    <dimen name="margin_2dp">2dp</dimen>
+    <dimen name="margin_40dp">40dp</dimen>
+    <dimen name="margin_24dp">24dp</dimen>
+    <dimen name="margin_20dp">20dp</dimen>
+    <dimen name="margin_16dp">16dp</dimen>
+    <dimen name="margin_10dp">10dp</dimen>
+    <dimen name="margin_5dp">5dp</dimen>
+    <dimen name="text_size_10sp">10sp</dimen>
+    <dimen name="tab_height">40dp</dimen>
+    <dimen name="tab_min_width">100dp</dimen>
+    <dimen name="margin_8dp">8dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
+    <dimen name="responsive_icon_size">42dp</dimen>
+
+    <dimen name="textSizeTitle">14sp</dimen>
+    <dimen name="textSizeSubTitle">13sp</dimen>
+
+    <dimen name="responsiveDefaultPadding">8dp</dimen>
+</resources>

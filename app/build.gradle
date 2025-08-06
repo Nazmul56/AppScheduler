@@ -3,6 +3,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'com.google.devtools.ksp'
+apply plugin: 'dagger.hilt.android.plugin'
 
 android {
     compileSdkVersion 35
@@ -62,5 +63,11 @@ dependencies {
     implementation "androidx.room:room-runtime:2.5.2"
     implementation "androidx.room:room-ktx:2.5.2"
     ksp "androidx.room:room-compiler:2.5.2"
+
+    implementation libs.material // or latest version
+    implementation libs.hilt.android
+    annotationProcessor libs.hilt.compiler
+    implementation libs.lottie
+    implementation 'com.google.code.gson:gson:2.11.0'
 
 }
