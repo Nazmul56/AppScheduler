@@ -1,16 +1,14 @@
 package com.meldcx.appschedule.membertaskreminder.reminderimageviewer
 
+import android.R
 import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.bracits.mf.common.utils.Constant
-import com.bracits.smartpo.R
-import com.bracits.smartpo.base.BaseDialogFragment
-import com.bracits.smartpo.databinding.MemberTaskImageViewerDialogFragmentBinding
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
+import com.meldcx.appschedule.databinding.MemberTaskImageViewerDialogFragmentBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

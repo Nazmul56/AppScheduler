@@ -2,7 +2,7 @@ package com.meldcx.appschedule.membertaskreminder.remindersetdialog
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.bracits.smartpo.base.BaseViewModel
+import androidx.lifecycle.ViewModel
 import com.meldcx.appschedule.membertaskreminder.helper.AudioRecorderEnum
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
@@ -10,7 +10,7 @@ import javax.inject.Inject
 @HiltViewModel
 class MemberTaskReminderDialogFragmentViewModel
 @Inject constructor() :
-    BaseViewModel() {
+    ViewModel() {
 
     companion object {
         val TAG = "MemberTaskReminderDialogFragmentViewModel"

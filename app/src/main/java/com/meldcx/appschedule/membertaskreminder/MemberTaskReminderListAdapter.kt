@@ -12,11 +12,6 @@ import androidx.appcompat.widget.PopupMenu
 import androidx.core.content.ContextCompat
 import androidx.core.widget.ImageViewCompat
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
-import com.bracits.mf.common.utils.Constant.DATE_FORMAT_REMINDER
-import com.bracits.smartpo.R
-import com.bracits.smartpo.base.BaseRecyclerAdapterWithViewBinding
-import com.bracits.smartpo.databinding.ItemMemberTaskReminderBinding
-import com.bumptech.glide.Glide
 import com.meldcx.appschedule.membertaskreminder.data.MemberTaskReminderEntity
 import com.meldcx.appschedule.membertaskreminder.data.MemberTaskReminderEnum
 import java.text.SimpleDateFormat

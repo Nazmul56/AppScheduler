@@ -1,6 +1,7 @@
 package com.meldcx.appschedule.membertaskreminder.remindersetdialog
 
 import android.Manifest
+import android.R
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.DatePickerDialog
@@ -13,6 +14,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.provider.SyncStateContract.Constants
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -23,32 +25,19 @@ import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.app.ActivityCompat
 import androidx.core.widget.addTextChangedListener
+import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.WorkManager
 import androidx.work.workDataOf
 import com.airbnb.lottie.LottieAnimationView
 import com.airbnb.lottie.LottieDrawable
-import com.bracits.mf.common.utils.Constant
-import com.bracits.mf.common.utils.Constant.DATE_FORMAT_REMINDER
-import com.bracits.smartpo.R
-import com.bracits.smartpo.base.BaseDialogFragment
-import com.bracits.smartpo.constant.AppHelper
-import com.bracits.smartpo.constant.Constants.CAMERA_IMAGE
-import com.bracits.smartpo.constant.Constants.INTENT_CAMERA_ACTION_TYPE
-import com.bracits.smartpo.enums.ProjectEnum
 import com.meldcx.appschedule.membertaskreminder.MemberTaskReminderRepository
 import com.meldcx.appschedule.membertaskreminder.helper.AudioRecorderEnum
 import com.meldcx.appschedule.membertaskreminder.helper.NotificationHelper
 import com.meldcx.appschedule.membertaskreminder.worker.MemberTaskReminderWorker
-import com.bracits.smartpo.service.audioplayer.playback.AndroidAudioPlayer
-import com.bracits.smartpo.service.audioplayer.record.AndroidAudioRecorder
-import com.bracits.smartpo.service.localdb.entity.MemberTaskReminderEntity
-import com.bracits.smartpo.util.constant.SharedPreferenceConfiguration
-import com.bracits.smartpo.util.time_utility.UserTrueTime
-import com.bracits.smartpo.util.truetime.TrueTime
-import com.bracits.smartpo.views.activity.camerax.CameraEnum
-import com.bracits.smartpo.views.activity.camerax.CameraXActivity
+import com.meldcx.appschedule.databinding.MemberTaskReminderDialogFragmentBinding
+import com.meldcx.appschedule.membertaskreminder.constant.Constant
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -66,7 +55,7 @@ import javax.inject.Inject
 import kotlin.math.roundToInt
 
 @AndroidEntryPoint
-class MemberTaskReminderDialogFragment : BaseDialogFragment() {
+class MemberTaskReminderDialogFragment : DialogFragment() {
     private var _binding: MemberTaskReminderDialogFragmentBinding? = null
     private val binding get() = _binding!!
 
@@ -77,7 +66,7 @@ class MemberTaskReminderDialogFragment : BaseDialogFragment() {
     var voId: Long? = null
     var mDate: Date? = null
 
-    private val mSimpleDateFormat = SimpleDateFormat(DATE_FORMAT_REMINDER, Locale.ENGLISH)
+    private val mSimpleDateFormat = SimpleDateFormat(Constant.DATE_FORMAT_REMINDER, Locale.ENGLISH)
     var date: Calendar = Calendar.getInstance()
 
     @JvmField
@@ -151,13 +140,6 @@ class MemberTaskReminderDialogFragment : BaseDialogFragment() {
             val userData = AppHelper.getUserData(requireContext())
             val branchId = userData.branchId ?: 0L
 
-          /*  if (isBranchManager) {
-                val loginResponse = Methods.getLoginResponse(requireContext())
-                branchId = loginResponse.branchId
-            } else {
-                val poInfo = SharedPreferenceConfiguration.getInstance(requireContext()).poInfo
-                branchId = poInfo.branchDto.id
-            }*/
 
             //Input validation Check Reminder Reason Required
             if (binding.edtComment.text.toString().isNotEmpty()) { //|| newRecordFilePath.isNotEmpty() || viewModel.imagePath.value.toString().isNotEmpty()

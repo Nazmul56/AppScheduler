@@ -1,5 +1,6 @@
 package com.meldcx.appschedule.membertaskreminder.memberattention
 
+import android.R
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -9,9 +10,8 @@ import android.view.animation.AccelerateDecelerateInterpolator
 import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
 import androidx.viewpager2.widget.ViewPager2
-import com.bracits.mf.common.utils.SafeClickListener
-import com.bracits.mf.common.utils.viewLifecycleNullable
 import com.meldcx.appschedule.membertaskreminder.MemberTaskReminderFragment
+import dagger.hilt.android.AndroidEntryPoint
 
 import java.lang.reflect.Field
 

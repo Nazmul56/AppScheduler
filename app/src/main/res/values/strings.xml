@@ -1,4 +1,33 @@
 <resources>
     <string name="app_name">App Schedule</string>
     <string name="text_save">Save</string>
+    <string name="member_task_reminder_type">Reminder Type</string>
+    <string name="member_task_reminder_added_successfully">Reminder save successfully</string>
+    <string name="member_task_reminder_title_txt">Set Reminder</string>
+    <string name="member_task_reminder_txt">Reminder</string>
+    <string name="member_task_reminder_set_at">Reminder set at:</string>
+    <string name="member_task_reminder_type_select">Select Reminder Type</string>
+    <string name="member_task_reminder_reason_select">Select Reminder Reason</string>
+    <string name="member_task_reminder_voice_note">Voice</string>
+    <string name="member_task_recording_delete">Recording delete</string>
+    <string name="member_task_play_audio">Play Audio</string>
+    <string name="member_task_reminder_not_found_txt">No reminder found</string>
+    <string name="member_task_reminder_write_txt">Write reminder</string>
+    <string name="member_task_reminder_add_txt">Reminder add</string>
+    <string name="member_task_reminder_enter_reminder">Enter reminder</string>
+    <string name="member_task_reminder_field_txt">Reminder: </string>
+    <string name="member_task_reminder_date_error_txt">The selected time has already passed</string>
+    <string name="member_task_reminder_initial_timer_txt">0:00</string>
+    <string name="member_task_reminder_cannot_play_recording_txt">Recording cannot play</string>
+    <string name="member_task_reminder_cannot_show_img_txt">Image cannot show</string>
+
+    <string name="close">Close</string>
+    <string name="allowed_digits" translatable="false">abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.</string>
+    <string name="dummy_description">dummy_description</string>
+    <string name="image">Image</string>
+    <string name="date_and_time">Date &amp; Time</string>
+    <string name="text_take_picture">Take Picture</string>
+
+    <string name="text_reminder">Reminder</string>
+    <string name="no_data_found">No data found</string>
 </resources>

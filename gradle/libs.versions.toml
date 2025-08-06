@@ -2,9 +2,11 @@
 activityKtx = "1.7.2"
 agp = "8.9.2"
 appcompatVersion = "1.6.1"
+audiovisualizer = "0.9.0"
 comGoogleDevtoolsKspGradlePlugin = "1.9.10-1.0.13"
 coreKtxVersion = "1.12.0"
 fragmentKtx = "1.8.8"
+gson = "2.11.0"
 hiltAndroidGradlePlugin = "2.45"
 hiltAndroidGradlePluginVersion = "2.48"
 kotlin = "2.0.21"
@@ -44,7 +46,9 @@ androidx-recyclerview = { module = "androidx.recyclerview:recyclerview", version
 androidx-recyclerview-v131 = { module = "androidx.recyclerview:recyclerview", version.ref = "recyclerviewVersion" }
 androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "roomCompiler" }
 androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "roomRuntime" }
+audiovisualizer = { module = "com.gauravk.audiovisualizer:audiovisualizer", version.ref = "audiovisualizer" }
 com-google-devtools-ksp-gradle-plugin = { module = "com.google.devtools.ksp:com.google.devtools.ksp.gradle.plugin", version.ref = "comGoogleDevtoolsKspGradlePlugin" }
+gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hiltAndroidGradlePluginVersion" }
 hilt-android-gradle-plugin = { module = "com.google.dagger:hilt-android-gradle-plugin", version.ref = "hiltAndroidGradlePlugin" }
 hilt-android-gradle-plugin-v248 = { module = "com.google.dagger:hilt-android-gradle-plugin", version.ref = "hiltAndroidGradlePluginVersion" }
