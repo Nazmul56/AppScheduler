@@ -1,9 +1,11 @@
 package com.meldcx.appschedule.membertaskreminder.worker
 
+import android.R
 import android.content.Context
 import android.util.Log
 import androidx.work.Worker
 import androidx.work.WorkerParameters
+import com.meldcx.appschedule.AppDatabase
 import com.meldcx.appschedule.membertaskreminder.constant.Constant
 import com.meldcx.appschedule.membertaskreminder.helper.NotificationHelper
 import java.text.SimpleDateFormat
@@ -14,7 +16,8 @@ import kotlin.random.Random
 class MemberTaskReminderWorker (context: Context, params: WorkerParameters) : Worker(context, params) {
 
     private val TAG = "MemberTaskReminderWorker"
-    var masterDatabase: MasterDatabase = MasterDatabase.getDatabase(context)
+    //var masterDatabase: MasterDatabase = MasterDatabase.getDatabase(context)
+    val masterDatabase = AppDatabase.getInstance(context)
 
     override fun doWork(): Result {
 
@@ -27,19 +30,16 @@ class MemberTaskReminderWorker (context: Context, params: WorkerParameters) : Wo
         val reminderUUID: UUID = UUID.fromString(reminderId)
         Log.d(TAG, "Reminder ID: $reminderId Trigger Time: $reminderTriggerTime")
 
-        //Get Reminder Data from Database
         val reminderModel = masterDatabase.memberTaskReminderDao().getMemberTaskReminder(reminderUUID)
 
-        //Return if notification deleted
         if(reminderModel == null){
             Log.d(TAG, "Reminder Deleted from db")
             return Result.success()
         }
-        //Update Reminder Table
+
         masterDatabase.memberTaskReminderDao().updateReminderPlayed(reminderUUID, true)
         Log.d(TAG, "Reminder From DB: ${reminderModel.id} reminder reason: ${reminderModel.reminderReason} Trigger Time: ${reminderModel.reminderTriggerAt}")
 
-        //Insert In Notification Table
         var reminderTriggeredAt = SimpleDateFormat(DATE_FORMAT_ISO, Locale.getDefault()).format(TrueTime.now())
         if(reminderModel.reminderTriggerAt != null)
             reminderTriggeredAt = SimpleDateFormat(DATE_FORMAT_ISO, Locale.getDefault()).format(reminderModel.reminderTriggerAt)
@@ -51,7 +51,6 @@ class MemberTaskReminderWorker (context: Context, params: WorkerParameters) : Wo
         )
         masterDatabase.notificationDao().insertCentralAlert(notification)
 
-        // Show notification when the task is triggered
         val notificationMsg = "${reminderModel.reminderReason}${if (reminderModel.reminderAudioFileUri.isEmpty()) "" else " [${ applicationContext.getString(R.string.member_task_reminder_voice_note)}]"} ${if (reminderModel.reminderImageFilePath.isEmpty()) "" else " [${applicationContext.getString(R.string.image)}]"}"
         NotificationHelper.showNotification(
             applicationContext,
