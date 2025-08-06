@@ -14,7 +14,6 @@ import android.net.Uri
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.provider.SyncStateContract.Constants
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -32,7 +31,6 @@ import androidx.work.WorkManager
 import androidx.work.workDataOf
 import com.airbnb.lottie.LottieAnimationView
 import com.airbnb.lottie.LottieDrawable
-import com.meldcx.appschedule.membertaskreminder.MemberTaskReminderRepository
 import com.meldcx.appschedule.membertaskreminder.helper.AudioRecorderEnum
 import com.meldcx.appschedule.membertaskreminder.helper.NotificationHelper
 import com.meldcx.appschedule.membertaskreminder.worker.MemberTaskReminderWorker
@@ -74,15 +72,6 @@ class MemberTaskReminderDialogFragment : DialogFragment() {
     var memberTaskReminderRepository: MemberTaskReminderRepository? = null
 
     private lateinit var viewModel: MemberTaskReminderDialogFragmentViewModel
-
-    //Audio Recorder and player
-    private val recorder by lazy {
-        AndroidAudioRecorder(requireContext())
-    }
-
-    private val player by lazy {
-        AndroidAudioPlayer(requireContext())
-    }
 
     private var recordingAmpTimer = Timer()
     private val AMPLITUDE_UPDATE_MS = 75L
