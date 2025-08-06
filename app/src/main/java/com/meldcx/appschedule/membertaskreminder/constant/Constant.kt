@@ -14,4 +14,8 @@ object Constant {
     const val KEY_VO_ID = "voId"
     const val KEY_PO_ID = "poId"
 
+    const val DATE_FORMAT_ISO = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+
+    const val NOTIFICATION = "notification"
+
 }

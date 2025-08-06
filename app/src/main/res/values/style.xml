@@ -24,6 +24,22 @@
         <item name="errorTextAppearance">@style/ErrorAppearance</item>
     </style>
 
+    <style name="datepicker" parent="Theme.AppCompat.Light.Dialog">
+        <!-- Use raw hex colors instead of resource references -->
+        <item name="colorAccent">#FF5722</item>
+        <item name="android:colorAccent">#FF5722</item>
+        <item name="android:textColor">#FF5722</item>
+        <item name="android:textColorPrimaryInverse">#FFFFFF</item>
+        <item name="android:textColorSecondaryInverse">#FFFFFF</item>
+        <item name="android:textColorPrimary">#FF5722</item>
+        <item name="colorControlActivated">#FF5722</item>
+        <item name="android:buttonBarButtonStyle">@style/ButtonStyle</item>
+    </style>
+
+    <style name="ButtonStyle" parent="Widget.AppCompat.Button.ButtonBar.AlertDialog">
+        <item name="android:textColor">#354148</item>
+    </style>
+
     <style name="ErrorAppearance" parent="@android:style/TextAppearance">
         <item name="android:textColor">@color/error_color</item>
         <item name="android:padding">4dp</item>

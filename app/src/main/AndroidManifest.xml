@@ -3,6 +3,7 @@
     package="com.meldcx.appschedule">
 
     <!-- Permission to receive BOOT_COMPLETED broadcast -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />

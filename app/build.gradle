@@ -80,6 +80,4 @@ dependencies {
     kapt 'com.github.bumptech.glide:compiler:4.16.0' // Only if you're using annotations (optional)
     implementation "androidx.work:work-runtime-ktx:2.9.0"
 
-
-
 }

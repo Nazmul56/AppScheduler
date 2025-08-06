@@ -1,7 +1,6 @@
 package com.meldcx.appschedule.membertaskreminder.helper
 
 import android.Manifest
-import android.R
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.PendingIntent
@@ -13,9 +12,9 @@ import android.util.Log
 import androidx.core.app.ActivityCompat
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
-import com.bracits.smartpo.po.SmartMfMainActivity
 import com.bumptech.glide.Glide
 import com.meldcx.appschedule.MainActivity
+import com.meldcx.appschedule.R
 
 object NotificationHelper {
     private val TAG  = "NotificationHelper"
@@ -67,7 +66,7 @@ object NotificationHelper {
                 .get()
 
             notification = NotificationCompat.Builder(context, CHANNEL_ID)
-                .setSmallIcon(R.drawable.ic_popup_reminder)
+                .setSmallIcon(R.drawable.notification_icon)
                 .setContentTitle(title)
                 .setContentText(message)
                 .setPriority(NotificationCompat.PRIORITY_HIGH)
