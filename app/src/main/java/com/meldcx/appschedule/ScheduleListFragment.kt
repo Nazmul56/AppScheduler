@@ -13,6 +13,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.meldcx.appschedule.membertaskreminder.remindersetdialog.MemberTaskReminderDialogFragment
 
 class ScheduleListFragment : Fragment() {
 
@@ -46,7 +47,8 @@ class ScheduleListFragment : Fragment() {
         }
 
         fabAddSchedule.setOnClickListener {
-            showAddDialog()
+            //showAddDialog()
+            showNewAddDialog()
         }
 
         return view
@@ -68,6 +70,11 @@ class ScheduleListFragment : Fragment() {
         val dialog = ScheduleDialog(appList = installedApps, onSave = { schedule ->
             viewModel.insert(schedule)
         })
+        dialog.show(parentFragmentManager, "ScheduleDialog")
+    }
+
+    private fun showNewAddDialog() {
+        val dialog = MemberTaskReminderDialogFragment()
         dialog.show(parentFragmentManager, "ScheduleDialog")
     }
 

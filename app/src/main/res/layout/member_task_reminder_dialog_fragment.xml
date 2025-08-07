@@ -73,7 +73,7 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/text_input_comment"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
@@ -84,12 +84,11 @@
                 app:boxStrokeWidthFocused="0dp"
                 app:hintTextColor="@color/app_primary_text_place_holder"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_chainStyle="packed"
                 app:layout_goneMarginTop="@dimen/margin_24dp"
-                tools:visibility="visible">
+                android:visibility="visible">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edt_comment"
@@ -97,7 +96,6 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/bg_rounded_corner_stroke_et"
                     android:gravity="start"
-                    android:imeOptions="actionDone"
                     android:inputType="textMultiLine"
                     android:isScrollContainer="true"
                     android:lines="3"
@@ -129,6 +127,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:paddingBottom="@dimen/margin_8dp"
+            android:visibility="visible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cl_reminder_comment">
@@ -166,7 +165,7 @@
                     android:id="@+id/text_input_edit_text_date"
                     style="@style/EditTextStyle"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="48dp"
                     android:background="@drawable/bg_rounded_corner_stroke_et"
                     android:enabled="true"
                     android:focusable="false"
@@ -192,149 +191,13 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/cl_reminder_pic"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:paddingBottom="@dimen/margin_8dp"
-            app:layout_constraintTop_toBottomOf="@+id/cl_reminder_date"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/text_input_pic"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margin_8dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:background="@drawable/bg_rounded_corner_stroke_et"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <ImageView
-                    android:id="@+id/iv_delete_img"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginEnd="@dimen/margin_12dp"
-                    android:contentDescription="@string/dummy_description"
-                    android:elevation="1dp"
-                    android:padding="@dimen/margin_2dp"
-                    android:visibility="gone"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/ic_delete"
-
-                    app:layout_constraintBottom_toBottomOf="@+id/text_input_pic"
-                    app:layout_constraintEnd_toStartOf="@+id/iv_take_image"
-                    app:layout_constraintTop_toTopOf="@+id/text_input_pic"
-                    app:tint="@color/black" />
-
-                <ImageView
-                    android:id="@+id/iv_take_image"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginEnd="@dimen/margin_12dp"
-                    android:contentDescription="@string/dummy_description"
-                    android:elevation="1dp"
-                    android:padding="@dimen/margin_2dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/ic_camera_line"
-
-                    app:layout_constraintBottom_toBottomOf="@+id/text_input_pic"
-                    app:layout_constraintEnd_toEndOf="@+id/text_input_pic"
-                    app:layout_constraintTop_toTopOf="@+id/text_input_pic" />
-                <ImageView
-                    android:id="@+id/taken_img"
-                    android:layout_height="wrap_content"
-                    android:layout_width="wrap_content"
-                    android:maxHeight="100dp"
-                    android:maxWidth="100dp"
-                    android:minHeight="48dp"
-                    android:layout_marginHorizontal="@dimen/margin_8dp"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/iv_delete_img"/>
-                <TextView
-                    android:id="@+id/tv_no_image_selected"
-                    android:layout_width="wrap_content"
-                    android:layout_height="48dp"
-                    android:paddingVertical="@dimen/margin_8dp"
-                    android:paddingHorizontal="@dimen/margin_16dp"
-                    android:textSize="@dimen/text_size_16sp"
-                    android:text="@string/text_take_picture"
-                    android:gravity="center"
-                    android:textColor="@color/address_text_placeholder_color"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/cl_progress"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/cl_reminder_pic"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
-
-            <com.visualizer.amplitude.AudioRecordView
-                android:id="@+id/recorder_visualizer"
-                android:layout_width="0dp"
-                android:layout_height="48dp"
-                android:layout_marginHorizontal="@dimen/margin_16dp"
-                app:chunkAlignTo="center"
-                app:chunkMaxHeight="200dp"
-                app:chunkMinHeight="2dp"
-                app:chunkRoundedCorners="true"
-                app:chunkSoftTransition="true"
-                app:chunkSpace="2dp"
-                app:chunkWidth="1dp"
-                android:visibility="gone"
-                tools:visibility="visible"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:ignore="MissingClass" />
-
-        <SeekBar
-            android:id="@+id/player_progress_bar"
-            android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:layout_marginHorizontal="@dimen/margin_8dp"
-            android:visibility="gone"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-        <TextView
-            android:id="@+id/tv_timer"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="@dimen/margin_8dp"
-            android:text="@string/member_task_reminder_initial_timer_txt"
-            android:visibility="gone"
-            android:textColor="@color/text_color_black"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cl_progress"
-            tools:ignore="RtlSymmetry"
-            tools:visibility="visible"
-            tools:text="0:00" />
-
-        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cl_control_btn_container"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="10dp"
+            android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_timer"
+            app:layout_constraintTop_toBottomOf="@+id/cl_reminder_date"
             tools:ignore="RtlSymmetry">
 
             <ImageView
@@ -379,11 +242,11 @@
             android:visibility="visible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cl_control_btn_container">
+            app:layout_constraintTop_toBottomOf="@+id/cl_reminder_date">
 
             <Button
                 android:id="@+id/btnSave"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:background="@drawable/bg_button_green"

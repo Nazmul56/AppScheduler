@@ -5,6 +5,7 @@ import android.app.Dialog
 import android.app.TimePickerDialog
 import android.content.Context
 import android.os.Bundle
+import android.text.Editable
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -22,7 +23,6 @@ import com.meldcx.appschedule.membertaskreminder.helper.NotificationHelper
 import com.meldcx.appschedule.membertaskreminder.worker.ReminderWorker
 import com.meldcx.appschedule.databinding.MemberTaskReminderDialogFragmentBinding
 import com.meldcx.appschedule.membertaskreminder.constant.Constant
-import dagger.hilt.android.AndroidEntryPoint
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Date
@@ -30,15 +30,9 @@ import java.util.Locale
 import java.util.UUID
 import java.util.concurrent.TimeUnit
 
-@AndroidEntryPoint
 class MemberTaskReminderDialogFragment : DialogFragment() {
     private var _binding: MemberTaskReminderDialogFragmentBinding? = null
     private val binding get() = _binding!!
-
-    var memberId: Long = 0
-    var poId: Long? = null
-    var memberName: String? = null
-    var voId: Long? = null
     var mDate: Date? = null
 
     private val mSimpleDateFormat = SimpleDateFormat(Constant.DATE_FORMAT_REMINDER, Locale.ENGLISH)
@@ -48,11 +42,6 @@ class MemberTaskReminderDialogFragment : DialogFragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        memberId = requireArguments().getLong(Constant.KEY_MEMBER_ID)
-        poId = requireArguments().getLong(Constant.KEY_PO_ID)
-        memberName = requireArguments().getString(Constant.KEY_MEMBER_NAME)
-        voId = requireArguments().getLong(Constant.KEY_VO_ID)
-
         NotificationHelper.createNotificationChannel(requireContext())
     }
 
@@ -72,14 +61,10 @@ class MemberTaskReminderDialogFragment : DialogFragment() {
     ): View? {
         _binding = MemberTaskReminderDialogFragmentBinding.inflate(layoutInflater)
         viewModel = ViewModelProvider(this)[MemberTaskReminderDialogFragmentViewModel::class.java]
-        binding.textInputEditTextDate.setOnClickListener { showDateTimePicker() }
-
+       // binding.textInputEditTextDate.setOnClickListener { showDateTimePicker() }
         binding.textInputDate.setOnClickListener { showDateTimePicker() }
         binding.imgCalender.setOnClickListener { showDateTimePicker() }
-
-        if (!memberName.isNullOrEmpty())
-            binding.tvMember.text = String.format("%s %s", "for", memberName)
-
+        binding.edtComment.text = Editable.Factory.getInstance().newEditable("Hi")
         val FIVE_MINUTE = 5 * 60 * 1000L  // 5 minutes in milliseconds
 
         val currentTime = System.currentTimeMillis()
@@ -99,7 +84,6 @@ class MemberTaskReminderDialogFragment : DialogFragment() {
 
         binding.btnSave.setOnClickListener {
 
-            //Input validation Check Reminder Reason Required
             if (binding.edtComment.text.toString()
                     .isNotEmpty()
             ) { //|| newRecordFilePath.isNotEmpty() || viewModel.imagePath.value.toString().isNotEmpty()
