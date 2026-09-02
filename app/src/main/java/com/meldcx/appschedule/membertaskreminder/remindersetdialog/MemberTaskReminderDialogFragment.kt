@@ -22,7 +22,6 @@ import com.meldcx.appschedule.membertaskreminder.helper.NotificationHelper
 import com.meldcx.appschedule.membertaskreminder.worker.ReminderWorker
 import com.meldcx.appschedule.databinding.MemberTaskReminderDialogFragmentBinding
 import com.meldcx.appschedule.membertaskreminder.constant.Constant
-import dagger.hilt.android.AndroidEntryPoint
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Date
@@ -30,7 +29,6 @@ import java.util.Locale
 import java.util.UUID
 import java.util.concurrent.TimeUnit
 
-@AndroidEntryPoint
 class MemberTaskReminderDialogFragment : DialogFragment() {
     private var _binding: MemberTaskReminderDialogFragmentBinding? = null
     private val binding get() = _binding!!

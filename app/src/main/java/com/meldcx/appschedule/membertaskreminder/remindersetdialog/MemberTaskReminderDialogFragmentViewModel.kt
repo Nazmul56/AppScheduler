@@ -3,12 +3,15 @@ package com.meldcx.appschedule.membertaskreminder.remindersetdialog
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import dagger.hilt.android.lifecycle.HiltViewModel
-import javax.inject.Inject
 
-@HiltViewModel
-class MemberTaskReminderDialogFragmentViewModel
-@Inject constructor() :
+enum class AudioRecorderEnum {
+    RECORD_START,
+    RECORD_STOP,
+    RECORD_PAUSE,
+    RECORD_RESUME
+}
+
+class MemberTaskReminderDialogFragmentViewModel :
     ViewModel() {
 
     companion object {
@@ -16,7 +19,7 @@ class MemberTaskReminderDialogFragmentViewModel
     }
 
     // Private mutable LiveData for internal updates
-    private val _audioRecorderStatus = MutableLiveData(AudioRecorderEnum.RECORD_STOP)
+    private val _audioRecorderStatus = MutableLiveData<AudioRecorderEnum>(AudioRecorderEnum.RECORD_STOP)
 
     //Public audio recorder
     val audioRecorderStatus: LiveData<AudioRecorderEnum> =  _audioRecorderStatus
