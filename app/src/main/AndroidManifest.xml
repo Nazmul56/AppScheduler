@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.meldcx.appschedule">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!-- Permission to receive BOOT_COMPLETED broadcast -->
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />

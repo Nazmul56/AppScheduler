@@ -1,40 +1,27 @@
 // App-level build.gradle
 
-apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
-apply plugin: 'com.google.devtools.ksp'
-apply plugin: 'dagger.hilt.android.plugin'
-//apply plugin: 'kotlin-kapt'
+plugins {
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.ksp)
+}
 
 android {
-    compileSdkVersion 35
+    namespace "com.meldcx.appschedule"
+    compileSdk 35
 
     defaultConfig {
-        namespace "com.meldcx.appschedule"
-        minSdkVersion 26
-        targetSdkVersion 34
+        applicationId "com.meldcx.appschedule"
+        minSdk 26
+        targetSdk 34
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-    viewBinding {
-        enabled = true
-    }
 
     buildFeatures {
-        compose true
-    }
-
-    composeOptions {
-        kotlinCompilerExtensionVersion '1.5.0' // Use latest Compose compiler version
-    }
-
-    kotlinOptions {
-        jvmTarget = "17"
-    }
-    kotlin {
-        jvmToolchain(17)
+        viewBinding = true
     }
 
     compileOptions {
@@ -42,11 +29,13 @@ android {
         targetCompatibility JavaVersion.VERSION_17
     }
 
+    kotlinOptions {
+        jvmTarget = "17"
+    }
 }
 
 dependencies {
     implementation libs.kotlin.stdlib
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version"
     implementation libs.kotlinx.coroutines.android
 
     implementation libs.androidx.core.ktx.v1120
@@ -56,28 +45,21 @@ dependencies {
     implementation libs.androidx.lifecycle.runtime.ktx
     implementation libs.androidx.lifecycle.viewmodel.ktx
     implementation libs.androidx.activity.ktx
-    implementation libs.androidx.fragment.ktx  // For Fragment viewModels() delegate
-
-    implementation libs.androidx.material3
+    implementation libs.androidx.fragment.ktx
 
     implementation libs.androidx.cardview
+    implementation libs.material
 
-    // Replace kapt with ksp for Room compiler
-    //ksp libs.androidx.room.compiler
-    implementation "androidx.room:room-runtime:2.5.2"
-    implementation "androidx.room:room-ktx:2.5.2"
-    ksp "androidx.room:room-compiler:2.5.2"
+    // Room
+    implementation libs.androidx.room.runtime
+    implementation libs.room.ktx
+    ksp libs.androidx.room.compiler
 
-    implementation libs.material // or latest version
-    implementation libs.hilt.android
-    annotationProcessor libs.hilt.compiler
     implementation libs.lottie
     implementation libs.gson
     implementation 'com.github.Armen101:AudioRecordView:1.0.5'
     implementation "androidx.work:work-runtime-ktx:2.9.0"
     implementation 'com.github.chrisbanes:PhotoView:2.3.0'
     implementation 'com.github.bumptech.glide:glide:4.16.0'
-    //kapt 'com.github.bumptech.glide:compiler:4.16.0' // Only if you're using annotations (optional)
-    implementation "androidx.work:work-runtime-ktx:2.9.0"
-
 }
+
